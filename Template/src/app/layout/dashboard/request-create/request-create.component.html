@@ -1,0 +1,104 @@
+<div class="request-create-block" *ngIf="!isClick">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title text-center">YÊU CẦU DỊCH VỤ</h3>
+    </div>
+    <!-- string empty là false
+          undefined = false
+          0 = false
+          null = false
+    -->
+    <div class="panel-body">
+      <div class="col-md-3">
+        Yêu cầu:
+        <span style="color: red">*</span>
+      </div>
+      <div class="col-md-7">
+        <select name="dichVu" [(ngModel)]="name" id="" class="form-control">
+          <option value="" disabled>Vui lòng chọn dịch vụ</option>
+          <option value="yTe">Dịch vụ y tế</option>
+          <option value="baoHiem">Bảo hiểm</option>
+          <option value="dvC">Dịch vụ chăm sóc sức khỏe</option>
+        </select>
+      </div>
+      <div class="row padding-top-15">
+        <div class="col-md-6 text-right">
+          <button type="button" class="btn btn-primary" (click)="requestClick(name)">Tạo yêu cầu</button>
+        </div>
+        <div class="col-md-6 text-left">
+          <button type="button" class="btn btn-primary" routerLink="/dashboard">Quay lại</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template [ngIf]="isClick === 'yTe'">
+  <div class="request-create-block">
+    <h1 class="text-center">{{'yêu cầu dịch vụ y tế' | uppercase}}</h1>
+    <div class="">
+      <div class="col-md-7">
+        <div class="row form-group">
+          <div class="col-md-2">
+            <p>Bảo hiểm:</p>
+          </div>
+          <div class="col-md-7">
+            <select name="insurrance" (change)="requestChange(insurrance)" [(ngModel)]="insurrance" id="" class="form-control">
+              <option value="" disabled>Không có bảo hiểm</option>
+              <option value="Chubb">Bảo hiểm Chubb</option>
+              <option value="baoViet">Bảo hiểm Bảo việt</option>
+              <option value="Prudential">Prudential</option>
+            </select>
+          </div>
+          <ng-template [ngIf]="isChange === 'Chubb'">
+            <div class="col-md-3">
+              <select name="insurrance_item" id="" [(ngModel)]="insurrance_item" class="form-control">
+                <option value="" disabled>Vui lòng chọn gói</option>
+                <option value="anGia">Bảo hiểm sức khỏe An Gia</option>
+                <option value="thinhVuong">Bảo hiểm sức khỏe Thịnh Vượng</option>
+              </select>
+            </div>
+          </ng-template>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-2">
+            <p>Dịch vụ:
+              <span style="color: red">*</span>
+            </p>
+          </div>
+          <div class="col-md-3">
+              <select name="type" [(ngModel)]="type" (change)="requestChangeSer(type)" id="" class="form-control">
+                <option value="" disabled>chọn loại</option>
+                <option value="package">Gói</option>
+                <option value="odd">Lẻ</option>
+                <option value="attach">Kèm theo</option>
+                <option value="other">Khác</option>
+              </select>
+          </div>
+
+          <ng-template [ngIf]="isChangeSer === 'package'">
+            <div class="col-md-4">
+              <select name="type_item" [(ngModel)]="type_item" id="" class="form-control">
+                <option value="" disabled>chọn loại</option>
+                <option value="package">Gói</option>
+                <option value="odd">Lẻ</option>
+                <option value="attach">Kèm theo</option>
+                <option value="other">Khác</option>
+              </select>
+            </div>
+            <div class="col-md-1">
+              <p>SL:</p>
+            </div>
+            <div class="col-md-2">
+              <input type="number" min="1" value="1" class="form-control">
+            </div>
+          </ng-template>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-10 col-md-offset-2">
+            <a class="them" (click)="addService()">+ Thêm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

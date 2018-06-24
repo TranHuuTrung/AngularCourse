@@ -1,0 +1,144 @@
+<app-login-header></app-login-header>
+
+<form class="container register">
+  <div class="row">
+    <h1 class="margin-50 text-center">ĐĂNG KÝ</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-4 pull-left">
+      <i>Trường bắt buộc:
+        <span style="color: red">*</span>
+      </i>
+    </div>
+    <div class=" col-md-4 text-center">
+      <input type="radio" name="gender1" ng-checked value="person" [(ngModel)]="name"> Cá nhân
+      <input type="radio" name="gender1" value="company" [(ngModel)]="name"> Công ty/Tổ chức
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Tên công ty/tổ chức:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'person'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Họ và tên:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'person'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Số điện thoại:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="phone" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'person'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Ngày sinh:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company' || name ==='person' ">
+    <div class="col-md-2 col-md-offset-2 pull-left">Địa chỉ:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-2">
+      <input type="radio" value="" name="city">Tp HCM
+    </div>
+    <div class="col-md-2">
+      <select name="" class="form-control col-md-2" id=""></select>
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company' || name === 'person'">
+    <div class="col-md-2 col-md-offset-8">
+      <input type="radio" name="city" id="">Tỉnh thành khác
+    </div>
+    <div class="col-md-2">
+      <select name="" id="" class="form-control"></select>
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Số điện thoại công ty:</div>
+    <div class="col-md-4">
+      <input type="phone" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'person'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Giới tính:</div>
+    <div class="col-md-2">
+      <input type="radio" name="gender" checked value="male">Nam
+    </div>
+    <div class="col-md-2">
+      <input type="radio" name="gender" value="gemale">Nữ
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Mã số thuế:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Người đại diện:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Số điện thoại công ty:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="phone" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company' || name === 'person'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Email:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="email" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company' || name === 'person'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Mật khẩu:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="password" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company' || name === 'person'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Nhập lại mật khẩu:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+      <input type="password" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group" *ngIf="name === 'company' || name === 'person'">
+    <div class="col-md-2 col-md-offset-2 pull-left">Mã xác nhận:
+      <span style="color: red">*</span>
+    </div>
+    <div class="col-md-4">
+        <re-captcha (resolved)="resolved($event)" siteKey="6LfH5FMUAAAAAC6tsyFleaXXTn3SWdPdIuu7yrjB"></re-captcha>
+    </div>
+  </div>
+</form>
+<app-footer></app-footer>

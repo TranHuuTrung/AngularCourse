@@ -1,0 +1,133 @@
+<div class="dashboard-block">
+
+  <div class="row">
+    <div class="row">
+      <div class="col-md-3 text-center">
+        <div class="form-group">
+          <button class=" btn btn-primary">Yêu Cầu</button>
+        </div>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class="form-group">
+          <button class=" btn btn-primary">Hợp đồng</button>
+        </div>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class="form-group">
+          <button class=" btn btn-primary">Lịch khám</button>
+        </div>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class="form-group">
+          <button class=" btn btn-primary">Kết quả</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 text-center">
+        <div class="form-group">
+          <a routerLink="request-create"><button type="button" class="btn btn-success">Tạo yêu cầu</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngFor="let arr of listTotal">
+      <div class="col-md-3 text-center">
+        <div class="block-well form-group">
+          <div class="block-well-header">
+            <span>
+              <b>{{arr.demand.number}}</b>
+            </span>
+            <span>
+              <i>{{arr.demand.visitOrderDate}}</i>
+            </span>
+            <span class="status pull-right">{{arr.demand.demandStatus}}</span>
+          </div>
+          <div class="block-well-body">
+            <p>Số lượng: {{ arr.demand.quantity }}</p>
+            <span *ngFor="let item of arr.demand.items">
+              <p *ngIf="item.product.name">Gói dịch vụ: {{item.product.name}}</p>
+            </span>
+            <p>Thời gian khám: {{arr.demand.demandDate}}</p>
+            <p>Nơi khám: {{arr.demand.hospitalName}}</p>
+            <p>Dịch vụ kèm theo: </p>
+          </div>
+          <div class="block-well-footer">
+            <span [routerLink]="['request-detail', arr.demand.id]" [queryParams]="{allowEdit: arr.demand.id}" fragment="loading">
+              Xem
+            </span>
+            <span routerLink="">Sửa</span>
+            <span routerLink="" style="color: red">Hủy</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class=" form-group">
+          <div class="block-well form-group" *ngIf="arr.saleOrder !== null">
+            <div class="block-well-header">
+              <span>
+                <b>{{arr.saleOrder?.number}}</b>
+              </span>
+              <span>
+                <i>{{arr.saleOrder?.saleOrderDate}}</i>
+              </span>
+              <span class="status pull-right"> {{arr.saleOrder?.salesStatus}}</span>
+            </div>
+            <p>Tổng số tiền: {{arr.saleOrder?.totalAmount}} </p>
+            <p *ngFor="let salePayment of arr.saleOrder?.salePayments">
+              <span *ngIf="salePayment.paymentType === 'Deposit'"> Đặt cọc: {{salePayment.amount}} </span>
+            </p>
+            <p>Ngày đặt cọc: {{arr.saleOrder?.saleOrderDate}}</p>
+            <p *ngFor="let salePayment of arr.saleOrder?.salePayments">
+              <span *ngIf="salePayment.paymentType === 'Final Payment'"> Còn lại: {{salePayment.amount}} </span>
+            </p>
+            <p *ngFor="let salePayment of arr.saleOrder?.salePayments">
+              <span *ngIf="salePayment.paymentType === 'Final Payment'"> Hạn thanh toán: {{salePayment.paymentDueDate}} </span>
+            </p>
+            <div class="block-well-footer">
+              <span [routerLink]="['contract-detail', arr.saleOrder.id]" [queryParams]="{allowEdit: arr.saleOrder.id}" fragment="chi tiết hợp đồng/loading">
+                Xem
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class=" form-group">
+          <div class="block-well form-group" *ngIf="arr.generalAppointment !== null">
+            <div class="block-well-header">
+              <span>
+                <b> {{arr.generalAppointment?.number}} </b>
+              </span>
+              <span class="status pull-right"> {{arr.generalAppointment?.generalStatus}} </span>
+            </div>
+            <p *ngFor="let appoiment of arr.generalAppointment?.appointments; let i=index">
+              {{i +1}} {{appoiment.customerName}}
+              <span class="pull-right"> {{appoiment.visitDate}} </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class=" form-group">
+          <div class="block-well form-group" *ngIf="arr.generalPatientVisit !== null">
+            <div class="block-well-header">
+              <span>
+                <b>YC.17.00455</b>
+              </span>
+              <span>
+                <i>29/12/2017</i>
+              </span>
+              <span class="status pull-right">Xong</span>
+            </div>
+            <p>Số lượng: 01</p>
+            <p>Gói dịch vụ: Gói Carenefit tiết kiệm nữ độc thân</p>
+            <p>Thời gian khám: 30/12/2017</p>
+            <p>Nới khám: Bệnh viện Tân hưng</p>
+            <p>Dịch vụ kèm theo: Không</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

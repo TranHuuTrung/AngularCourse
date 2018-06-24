@@ -1,0 +1,88 @@
+
+  <div class="request-detail col-md-8 col-md-offset-2">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Chi tiết yêu cầu</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-5">
+            <p>MÃ SỐ YÊU CẦU:</p>
+          </div>
+          <div class="col-md-7">
+            <p> {{result.number}} </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <p>NGÀY CẬP NHẬT HỆ THỐNG:</p>
+          </div>
+          <div class="col-md-7">
+            <p> {{result.visitOrderDate}} </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <p>TÊN ĐƠN VỊ:</p>
+          </div>
+          <div class="col-md-7">
+            <p> {{result.customer?.name}} </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <p>NƠI KHÁM: </p>
+          </div>
+          <div class="col-md-7">
+            {{result.hospital?.name}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <p>THỜI GIAN KHÁM:</p>
+          </div>
+          <div class="col-md-7">
+            <p> {{result.visitOrderDate}} </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <p>BẢO HIỂM:</p>
+          </div>
+          <div class="col-md-7">
+            <p> {{result.insurance?.name ? 'có' : 'không'}} </p>
+          </div>
+        </div>
+        <div class="row" *ngFor="let item of result.items">
+          <div class="col-md-5">
+            <div>DỊCH VỤ:
+              <p> {{item?.name}} </p>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <p>Giá: {{item.unitPrice === null ? '0' : item.unitPrice}}</p>
+            <p>Số lượng: {{result.quantity}} </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <p>TỔNG CỘNG</p>
+          </div>
+          <div class="col-md-7">
+            <p></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <p>TÍNH BẢO MẬT</p>
+          </div>
+          <div class="col-md-7">
+            <p> {{result.secured === 1 ? 'có' : 'không' }} </p>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-default"><a routerLink="/dashboard" >Quay lại</a></button>
+        </div>
+      </div>
+    </div>
+  </div>

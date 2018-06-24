@@ -1,0 +1,75 @@
+.page-content.bg {
+  background: url('/assets/images/subgg.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  min-height: calc(100vh - 36px);
+}
+
+.page-content {
+  opacity: 0.9;
+}
+
+.wrapper.bg {
+  background: url('/assets/images/bg.c23d5219c1e78a0c1f25.png');
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-position-y: calc(100% + 30px);
+  min-height: calc(100vh - 36px);
+}
+
+.navbar-header {
+  display: flex;
+  padding-left: 120px;
+}
+
+.brand .logo {
+  max-height: 60px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  height: 75px;
+  padding: 20px 15px;
+  color: #334D7F;
+  cursor: pointer;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.brand img {
+  vertical-align: middle;
+  align-items: center;
+}
+
+.bottom-head {
+  background-color: #F0F8FA;
+}
+
+.bottom-bar {
+  max-height: 85px;
+  display: flex;
+}
+
+.functions {
+  margin-right: 15px;
+  color: red;
+  padding-right: 55px;
+  text-align: right;
+  padding-top: 10px;
+  top: 0px;
+}
+
+.functions a {
+  cursor: pointer;
+}
+
+.solo-gan {
+  position: fixed;
+    bottom: 45px;
+    width: 100%;
+}
+

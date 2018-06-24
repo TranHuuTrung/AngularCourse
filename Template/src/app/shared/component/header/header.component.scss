@@ -1,0 +1,99 @@
+.topbar {
+  background-color: #334D7F;
+  padding: 10px;
+}
+
+.group-link {
+  color: white;
+  padding-right: 45px;
+
+}
+
+.group-link a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+
+.bottom-head {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.navbar-header {
+  padding-left: 80px;
+}
+
+.brand .logo {
+  max-height: 70px;
+  vertical-align: middle;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.navbar-nav {
+  margin-left: 10px;
+  padding-top: 30px;
+}
+
+.nav>li>a {
+  padding: 10px 8px;
+}
+
+
+.navigateLeft {
+  width: 200px;
+  position: absolute;
+  height: 100vh;
+  z-index: 1;
+  left: -200px;
+  transition: 1s;
+  background-color: #F0F8FA;
+}
+
+.navigateLeft ul {
+  list-style: none;
+}
+
+.left-menu {
+  padding-left: 0px;
+  li {
+    padding: 5px 0px 20px 60px;
+  }
+
+  padding-top: 20px;
+}
+
+#icon_toggle {
+  padding-left: 10px;
+  display: inline-block;
+  padding-top: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+
+.bottom-bar {
+  max-height: 85px;
+  display: flex;
+}
+
+.functions {
+  position: absolute;
+  color: red;
+  right: 15vw;
+  padding-top: 10px;
+  top: 0px;
+}
+
+.horizontal {
+  min-height: 38px;
+  width: 100%;
+  background: #334D7F;
+}
+
+nav {
+  margin-bottom: 0px;
+}

@@ -1,0 +1,50 @@
+.navbar-header {
+  display: flex;
+  padding-left: 120px;
+}
+
+.brand .logo {
+  max-height: 60px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  height: 75px;
+  padding: 20px 15px;
+  color: #334D7F;
+  cursor: pointer;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.brand img {
+  vertical-align: middle;
+  align-items: center;
+}
+
+.bottom-head {
+  background-color: #F0F8FA;
+}
+
+.bottom-bar {
+  max-height: 85px;
+  display: flex;
+}
+
+.functions {
+  margin-right: 15px;
+  color: red;
+  padding-right: 55px;
+  text-align: right;
+  padding-top: 10px;
+  top: 0px;
+}
+
+.functions a {
+  cursor: pointer;
+}
+
+
+

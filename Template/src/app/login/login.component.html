@@ -1,0 +1,48 @@
+<app-frames>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-8 loginbox">
+        <div class="panel panel-primary info">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center login-title">Đăng nhập</h3>
+          </div>
+          <div class="panel-body">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label>Tài khoản: </label>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">@</span>
+                  <input type="text" class="form-control" name="username" [(ngModel)]="username">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Mật khẩu:</label>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">@</span>
+                  <input type="text" class="form-control" name="password" [(ngModel)]="password">
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary center-block" style="width:100%"> Đăng Nhập </button>
+              </div>
+            </form>
+            <div class="text-right">
+              <i>Lấy lại mật khẩu</i>
+            </div>
+            <div>
+              Bạn chưa có tài khoản?
+            </div>
+            <div class="form-group">
+              <button class="center-block btn btn-primary form-control">
+                <a routerLink="register">Đăng ký</a>
+              </button>
+            </div>
+            <div class="form-group">
+              <button class="center-block btn btn-primary form-control">Dịch vụ của chúng tôi >></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-frames>
